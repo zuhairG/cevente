@@ -1,0 +1,80 @@
+<%= form_for @location, :html => { :class => "form-horizontal location" } do |f| %>
+
+    <% if @location.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @location.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'form-control' %>
+    </div>
+    <%= error_span(@location[:title]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :address1, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :address1, :class => 'form-control' %>
+    </div>
+    <%= error_span(@location[:address1]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :address2, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :address2, :class => 'form-control' %>
+    </div>
+    <%= error_span(@location[:address2]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :country, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :country, :class => 'form-control' %>
+    </div>
+    <%= error_span(@location[:country]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :city, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :city, :class => 'form-control' %>
+    </div>
+    <%= error_span(@location[:city]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :zipcode, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :zipcode, :class => 'form-control' %>
+    </div>
+    <%= error_span(@location[:zipcode]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :state, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :state, :class => 'form-control' %>
+    </div>
+    <%= error_span(@location[:state]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :phone_num, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :phone_num, :class => 'form-control' %>
+    </div>
+    <%= error_span(@location[:phone_num]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            locations_path, :class => 'btn btn-default' %>
+
+<% end %>

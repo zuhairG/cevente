@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  location_id: 1
+  desc: MyText
+  start_date: 2015-07-04 15:25:26
+  end_date: 2015-07-04 15:25:26
+  free_food: false
+  status: MyString
+  event_type_id: 1
+  num_views: 1
+  rsvp_max: 1
+  image: MyString
+
+two:
+  title: MyString
+  location_id: 1
+  desc: MyText
+  start_date: 2015-07-04 15:25:26
+  end_date: 2015-07-04 15:25:26
+  free_food: false
+  status: MyString
+  event_type_id: 1
+  num_views: 1
+  rsvp_max: 1
+  image: MyString

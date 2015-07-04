@@ -1,0 +1,52 @@
+<%= form_for @rsvp, :html => { :class => "form-horizontal rsvp" } do |f| %>
+
+    <% if @rsvp.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@rsvp.errors.count, "error") %> prohibited this rsvp from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @rsvp.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :user_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :user_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@rsvp[:user_id]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :event_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :event_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@rsvp[:event_id]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :status, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :status, :class => 'form-control' %>
+    </div>
+    <%= error_span(@rsvp[:status]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :rsvp_num, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :rsvp_num, :class => 'form-control' %>
+    </div>
+    <%= error_span(@rsvp[:rsvp_num]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            rsvps_path, :class => 'btn btn-default' %>
+
+<% end %>
