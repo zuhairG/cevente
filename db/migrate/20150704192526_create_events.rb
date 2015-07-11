@@ -11,8 +11,7 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :event_type_id
       t.integer :num_views
       t.integer :rsvp_max
-      t.string :image
-
+      t.attachment :image
       t.timestamps null: false
     end
   end

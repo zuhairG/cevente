@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150704203558) do
+ActiveRecord::Schema.define(version: 20150711220722) do
 
   create_table "event_types", force: :cascade do |t|
     t.string   "name"
@@ -31,9 +31,12 @@ ActiveRecord::Schema.define(version: 20150704203558) do
     t.integer  "event_type_id"
     t.integer  "num_views"
     t.integer  "rsvp_max"
-    t.string   "image"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "locations", force: :cascade do |t|
@@ -106,6 +109,10 @@ ActiveRecord::Schema.define(version: 20150704203558) do
     t.boolean  "event_creator"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
