@@ -7,12 +7,13 @@ class Ability
     if user.admin?
       can :manage, :all
 
-    #elsif user.student? || user.event_creator? || user.uni_admin?
-  else
+    elsif user.student? || user.event_creator? || user.uni_admin?
       can :read, :all
       can :create, Event
-      #can :destroy, Event, :user_id =>user.id
-      #can :edit, Event, :user_id =>user.id
+      can :destroy, Event, :user_id =>user.id
+      can :edit, Event, :user_id =>user.id
+    else
+      can :read, :all
 end
     #else
     #  can :read, :all
