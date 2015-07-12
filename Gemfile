@@ -51,4 +51,3 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'paperclip'
 gem 'cancan'
-gem 'protected_attributes'

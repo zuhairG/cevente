@@ -14,7 +14,7 @@ end
 
     def configure_permitted_parameters
         devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password,:student,:admin,:uni_admin,:event_creator) }
-        devise_parameter_sanitizer.for(:event.new) { |u| u.permit(:name, :email, :password, :current_password, :is_female, :date_of_birth, :image) }
+        devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :current_password, :date_of_birth, :image) }
     end
 
 
