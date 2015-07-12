@@ -1,4 +1,4 @@
-<%= form_for @event, :html => { :class => "form-horizontal event" } do |f| %>
+<%= form_for @event, :html => { :class => "form-horizontal event", :multipart => true } do |f| %>
 
     <% if @event.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -88,7 +88,7 @@
   <div class="control-group">
     <%= f.label :image, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :image, :class => 'form-control' %>
+      <%= f.file_field :image, :class => 'form-control' %>
     </div>
     <%= error_span(@event[:image]) %>
   </div>

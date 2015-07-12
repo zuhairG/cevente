@@ -25,7 +25,7 @@
   <dt><strong><%= model_class.human_attribute_name(:rsvp_max) %>:</strong></dt>
   <dd><%= @event.rsvp_max %></dd>
   <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
-  <dd><%= @event.image %></dd>
+  <dd><%= image_tag @event.image.url %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
