@@ -35,7 +35,7 @@
         <td><%= event.event_type_id %></td>
         <td><%= event.num_views %></td>
         <td><%= event.rsvp_max %></td>
-        <td><%= event.image %></td>
+        <td><%= image_tag event.image.url %></td>
         <td><%=l event.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
