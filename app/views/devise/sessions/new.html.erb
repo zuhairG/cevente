@@ -6,10 +6,22 @@
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <div id="login-overlay" class="modal-dialog">
-      <div class="modal-content" style="width:40%; display: inline-block; margin-right: 2%; margin-left:2%; margin-top:6%;">
 
-          <div class="modal-body">
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+
+      <a class="brand" href="#" style="margin-right:-20px;"><b>Cevente</b></a>
+
+    </div>
+  </div>
+</div>
+
+    <div id="login-overlay" class="modal-dialog" style="  background-color: black;">
+      <div class="modal-content" style="width:30%; display: inline-block; margin-right: 10%; margin-left:5%; margin-top:6%;">
+
+          <div class="body">
               <div class="row">
                   <div class="col-xs-6">
                       <div class="well">
@@ -32,11 +44,11 @@
                 <%= f.password_field :password, autocomplete: "off" %>
               </div>
 
-
+</br>
                       <% if devise_mapping.rememberable? -%>
                         <div class="field" style="color:black;">
-                          <%= f.check_box :remember_me %>
-                          <%= f.label :remember_me %>
+                      <div style="display: inline-block;">    <%= f.check_box :remember_me %></div>
+                      <div style="display: inline-block;">      <%= f.label :remember_me %> </div>
                         </div>
 
 </br>
@@ -61,19 +73,19 @@
 </div>
 </div>
 </div>
-<div class="modal-content" style="width: 50%; display: inline-block; margin-bottom: 70%;">
+<div class="modal-content" style="width: 50%; display: inline-block; margin-bottom: 15%; color:grey;">
 
   <div>
                       <p class="lead">Register now for <span class="text-success">FREE</span></p>
                       <ul class="list-unstyled" style="line-height: 2">
-                          <li><span class="fa fa-check text-success"></span> See all your orders</li>
-                          <li><span class="fa fa-check text-success"></span> Fast re-order</li>
-                          <li><span class="fa fa-check text-success"></span> Save your favorites</li>
-                          <li><span class="fa fa-check text-success"></span> Fast checkout</li>
-                          <li><span class="fa fa-check text-success"></span> Get a gift <small>(only new customers)</small></li>
-                          <li><a href="/read-more/"><u>Read more</u></a></li>
+                          <li><span class="fa fa-check text-success"></span> See all events in your area</li>
+                          <li><span class="fa fa-check text-success"></span> Check who is attending</li>
+                          <li><span class="fa fa-check text-success"></span> Create your own event</li>
+                          <li><span class="fa fa-check text-success"></span> Reunite with colleagues</li>
                       </ul>
-                      <p><a href="/new-customer/" class="btn btn-info btn-block">Yes please, register now!</a></p>
+                    </br>
+                  </br>
+                      <p><a href="/new-customer/" class="btn btn-info btn-block">Yes please, I want to Sign Up</a></p>
                   </div>
               </div>
           </div>
