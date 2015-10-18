@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
 
   #attr_accessible :admin, :student, :uni_admin, :event_creator
-  has_attached_file :image
+  has_attached_file :image,
+  :url => "/system/:attachment/:id/:style/:filename"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
