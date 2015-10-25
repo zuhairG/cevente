@@ -1,23 +1,20 @@
+
+
 <link class="cssdeck" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css">
 
 
+<header>
+  <%= render "devise/navbar" %>
 
+</header>
 
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 
 
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
 
-      <a class="brand" href="#" style="margin-right:-20px;"><b>Cevente</b></a>
-
-    </div>
-  </div>
-</div>
-
+<body>
     <div id="login-overlay" class="modal-dialog" style="  background-color: #645862;">
       <div class="modal-content" style="width:30%; display: inline-block; margin-right: 10%; margin-left:5%; margin-top:6%;">
 
@@ -73,7 +70,7 @@
 </div>
 </div>
 </div>
-<div class="modal-content" style="width: 50%; display: inline-block; margin-bottom: 15%; color:white;">
+<div class="modal-content" style="width: 50%; display: inline-block; margin-bottom: 10%; color:white;">
 
   <div>
                       <p class="lead">Register now for <span class="text-success">FREE</span></p>
@@ -89,6 +86,8 @@
                   </div>
               </div>
           </div>
+        </body>
+<%= render "devise/footer" %>
 
 
 <% end %>
