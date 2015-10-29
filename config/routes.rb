@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "users/sign_in", :to => "devise/sessions#new"
   get "users/sign_out", :to => "devise/sessions#destroy"
   get "users/sign_up", :to => "devise/registrations#new"
+  get "/welcome/:studentindex" => "studentindex#show"
+
 end
 
   resources :user_orgs
