@@ -59,8 +59,13 @@
   <div class="field" style="color:black;">
     <%= f.label :image, 'Profile Picture' %>
     <%= f.file_field :image %><br />
-
   </div>
+
+  <div class="field" style="color:black;">
+    <%= f.label :type %>
+    <%= f.select(:type, User::TYPE) %>
+  </div>
+  <%= f.hidden_field :student, :value => true %>
 
   				</div>
 

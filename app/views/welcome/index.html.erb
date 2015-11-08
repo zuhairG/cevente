@@ -21,8 +21,11 @@
                 	<p class="intro">Introducing</p>
                     <h2>Cevente</h2>
                     <h3>A personal secretary that handles your day to day events</h3>
+										<% if current_user%>
+										<p><%= link_to "Logout", destroy_user_session_path, :class=> "link-button"%><p>
+											<% else %>
 										<p><%= link_to "Login", new_user_session_path, :class=> "link-button"%><p>
-
+											<%end%>
 				</div>
   			</div>
 		</div>
