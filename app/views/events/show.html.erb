@@ -19,11 +19,12 @@
         <!-- Portfolio Item Row -->
         <div class="row">
 
-            <div class="col-md-2">
+            <div class="col-md-2" style="width:50%; float:left;">
                 <img class="img-responsive">   <%=image_tag @event.image.url%> </img>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4" style="width:50%; float:right;">
+            </br>
                 <h3>Project Description</h3>
                 <p><%= @event.desc %></p>
                 <h3>Project Details</h3>
@@ -55,8 +56,9 @@
         <!-- /.row -->
 
 
-<div style="margin-left:40%;">
-
+<div style="margin-left:55%;">
+</br>
+</br>
 <%= link_to t('.back', :default => t("helpers.links.back")),
               events_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
