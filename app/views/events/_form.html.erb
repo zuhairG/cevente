@@ -1,3 +1,6 @@
+
+ <div style="width:50%; margin: 0 33% auto;">
+
 <%= form_for @event, :html => { :class => "form-horizontal event", :multipart => true } do |f| %>
 
     <% if @event.errors.any? %>
@@ -93,9 +96,10 @@
     <%= error_span(@event[:image]) %>
   </div>
 
-
+<div style="margin-left:28%;">
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
             events_path, :class => 'btn btn-default' %>
-
+</div>
 <% end %>
+</div>
