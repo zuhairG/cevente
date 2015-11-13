@@ -1,5 +1,5 @@
 
- <div style="width:50%; margin: 0 33% auto;">
+ <div style="width:50%; float:left; ">
 
 <%= form_for @event, :html => { :class => "form-horizontal event", :multipart => true } do |f| %>
 
@@ -18,6 +18,7 @@
     </div>
   <% end %>
 
+
   <div class="control-group">
     <%= f.label :title, :class => 'control-label' %>
     <div class="controls">
@@ -35,7 +36,7 @@
   <div class="control-group">
     <%= f.label :desc, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :desc, :class => 'form-control' %>
+ <%= f.text_field :desc, :class => 'form-control' %>
     </div>
     <%= error_span(@event[:desc]) %>
   </div>
@@ -46,6 +47,12 @@
     </div>
     <%= error_span(@event[:start_date]) %>
   </div>
+
+
+
+
+
+
   <div class="control-group">
     <%= f.label :end_date, :class => 'control-label' %>
     <div class="controls">
@@ -60,6 +67,8 @@
     </div>
     <%= error_span(@event[:free_food]) %>
   </div>
+
+
   <div class="control-group">
     <%= f.label :status, :class => 'control-label' %>
     <div class="controls">
@@ -67,6 +76,9 @@
     </div>
     <%= error_span(@event[:status]) %>
   </div>
+
+</div>
+
   <div class="control-group">
     <%= f.label :event_type_id, :class => 'control-label' %>
     <div class="controls">
@@ -97,9 +109,14 @@
   </div>
 
 <div style="margin-left:28%;">
+</br>
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
             events_path, :class => 'btn btn-default' %>
-</div>
+          </br>
+        </br>
+
+          </br>
+          </div>
+
 <% end %>
-</div>
