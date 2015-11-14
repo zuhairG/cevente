@@ -7,8 +7,7 @@ class Event < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
 
-
-  has_many :users , :through => :user_events
+  belongs_to :user
   has_one :type
   has_one :location
   has_many :rsvps
