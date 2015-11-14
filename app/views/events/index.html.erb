@@ -42,7 +42,7 @@
 
         <!-- Project One -->
         <% @events.each do |event| %>
-
+          <% if event.user_id = current_user.id %>
         <div class="row">
             <div class="span5">
                 <a href="#">
@@ -61,6 +61,8 @@
         <!-- /.row -->
 
         <hr>
+          <% end %>
+
         <% end %>
 
 
