@@ -3,7 +3,44 @@
   <div class="navbar-inner">
     <div class="container">
 
+
       <a class="brand" href="#" style="margin-right:-20px;"><b>Cevente</b></a>
+      <ul class="nav pull-right">
+                  <li class="dropdown">
+                      <a data-toggle="dropdown" class="dropdown-toggle">hi</a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            Home
+                          </li>
+
+                          <li>
+                            Create an event
+                          </li>
+
+                          <li>
+                            My events
+                          </li>
+
+                          <li>
+                            Edit Profile
+                          </li>
+
+
+                          <li><a href="#">
+
+                            <% if user_signed_in? %>
+                            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                            <% end %>
+                          </a></li>
+
+                      </ul>
+                  </li>
+
+
+
+
+
+           </ul>
 
     </div>
   </div>
