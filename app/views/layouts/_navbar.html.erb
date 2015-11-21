@@ -8,12 +8,16 @@
                   <li class="dropdown">
                       <a data-toggle="dropdown" class="dropdown-toggle" style="margin-top:10%;"> <span class="glyphicon glyphicon-align-justify"></span> </a>
                         <ul class="dropdown-menu">
+                                <% if user_signed_in? %>
                           <li>
-                            Home
+                            <%= link_to "Home" %>
+
                           </li>
 
                           <li>
-                            Create an event
+
+                            <%= link_to "Create an event", "/events/new" %>
+
                           </li>
 
                           <li>
@@ -27,7 +31,6 @@
 
                           <li><a href="#">
 
-                            <% if user_signed_in? %>
                             <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
                             <% end %>
                           </a></li>
