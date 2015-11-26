@@ -81,7 +81,8 @@
   <div class="control-group">
     <%= f.label :event_type_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :event_type_id, :class => 'form-control' %>
+      <!-- <%= f.select :event_type_id, :class => 'form-control' %> -->
+      <%= f.select(:event_type_id, ['Public', 'Private'], {}, { :class => 'form-control' }) %>
     </div>
     <%= error_span(@event[:event_type_id]) %>
   </div>
