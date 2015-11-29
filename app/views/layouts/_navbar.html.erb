@@ -10,7 +10,7 @@
                         <ul class="dropdown-menu">
                                 <% if user_signed_in? %>
                           <li>
-                            <%= link_to "Home" %>
+                            <%= link_to "Home","../welcome/studentindex" %>
 
                           </li>
 
@@ -25,8 +25,8 @@
                           </li>
 
                           <li>
-                            Edit Profile
-                          </li>
+                              <%= link_to "Edit Profile", "/users/edit" %>
+                            </li>
 
 
                           <li><a href="#">

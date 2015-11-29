@@ -6,13 +6,13 @@
     <h3>Company<span>logo</span></h3>
 
     <p class="footer-links">
-      <a href="#">Home</a>
+      <a>                        <%= link_to "Home", root_path %></a>
       ·
-      <a href="#">About</a>
+      <a>        <%= link_to "About", "/aboutus" %></a>
       ·
       <a href="#">Faq</a>
       ·
-      <a href="#">Contact</a>
+      <a><%= link_to "Contact", "/contactus" %></a>
     </p>
 
     <p class="footer-company-name">Cevente &copy; 2015</p>
