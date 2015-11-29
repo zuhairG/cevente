@@ -14,8 +14,8 @@ end
 
     def configure_permitted_parameters
 
-        devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password,:student,:admin,:uni_admin,:event_creator,:password_confirmation) }
-        devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :current_password, :dob, :image) }
+        devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name,:last_name,:dob, :email, :password,:student,:admin,:uni_admin,:event_creator,:password_confirmation,:image) }
+        devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:first_name,:last_name,:dob, :email, :password, :current_password, :dob, :image) }
 
     end
 

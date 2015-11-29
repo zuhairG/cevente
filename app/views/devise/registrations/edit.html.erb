@@ -55,13 +55,12 @@
                   <%= image_tag @user.image.url, :class =>"img-rounded img-responsive",size: "250x250" %>
                   <%= f.file_field :image %>
                     <br />
-                    <%= current_user.id %>
                     <label><%= f.label :first_name %></label>
-                    <%= f.text_field :first_name, autofocus: true, class: "form-control"%>
+                    <%= f.text_field :first_name, autofocus: true, class: "form-control", placeholder: resource.first_name%>
                     <label><%= f.label :last_name %></label>
-                      <%= f.text_field :last_name, autofocus: true, class: "form-control"%>
+                      <%= f.text_field :last_name, autofocus: true, class: "form-control", placeholder: resource.last_name%>
                     <label> <%= f.label :email %></label>
-                      <%= f.email_field :email, autofocus: true, class: "form-control"%>
+                      <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: resource.email%>
                     <br /><br/>
                 </div>
                 <div class="col-md-8">
