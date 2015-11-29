@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
   devise_scope :user do
   get "users/sign_in", :to => "devise/sessions#new"
   get "users/sign_out", :to => "devise/sessions#destroy"
@@ -24,7 +24,6 @@ end
  get '/login' => 'welcome#login'
  get "/aboutus" => "aboutus#show"
  get "/contactus" => "contactus#show"
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

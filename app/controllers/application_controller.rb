@@ -8,6 +8,11 @@ rescue_from CanCan::AccessDenied do |e|
     flash[:error] = "Access Denied"
     redirect_to root_url
 
+
+end
+
+def after_sign_in_path_for(resource)
+  '/welcome/studentindex'
 end
 
   protected
