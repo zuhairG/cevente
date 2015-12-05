@@ -10,8 +10,10 @@ class Ability
     elsif user.student? || user.event_creator? || user.uni_admin?
       can :read, :all
       can :create, Event
-      can :destroy, Event, :user_id =>user.id
-      can :edit, Event, :user_id =>user.id
+      #can :destroy, Event, :user_id =>user.id
+      #can :edit, Event, :user_id =>user.id
+      can :manage, Event, :user_id =>user.id
+      can :manage, Location, :user_id =>user.id
 
     else
       can :read, :all

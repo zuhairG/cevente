@@ -11,10 +11,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+   has_many :locations
    has_many :events
    has_many  :organization , :through => :user_org
    has_many :rsvps
-
    TYPE = ['Student', 'Alumni']
 
 end

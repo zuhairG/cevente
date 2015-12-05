@@ -26,9 +26,9 @@
     <%= error_span(@event[:title]) %>
   </div>
   <div class="control-group">
-    <%= f.label :location_id, :class => 'control-label' %>
+    <%= f.label :location_id, :class => 'control-label'  %>
     <div class="controls">
-      <%= f.text_field :location_id, :class => 'form-control' %>
+      <%= collection_select(:event, :location_id, Location.by_user(current_user), :id, :title)%>
     </div>
     <%= error_span(@event[:location_id]) %>
   </div>
