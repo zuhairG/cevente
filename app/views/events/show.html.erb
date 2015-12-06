@@ -15,14 +15,11 @@
             </div>
         </div>
         <!-- /.row -->
-
         <!-- Portfolio Item Row -->
         <div class="row">
-
             <div class="col-md-2" style="width:50%; float:left;">
                 <img class="img-responsive">   <%=image_tag @event.image.url%> </img>
             </div>
-
             <div class="col-md-4" style="width:50%; float:right;">
             </br>
                 <h3>Project Description</h3>
@@ -31,7 +28,7 @@
                 <ul>
 
                     <li>  <strong><%= model_class.human_attribute_name(:title) %>:</strong> &nbsp;&nbsp;<%= @event.title %></li>
-                      <li><strong><%= model_class.human_attribute_name(:location_id) %>:</strong>&nbsp;&nbsp;<%= @event.location_id %></li>
+                      <li><strong><%= model_class.human_attribute_name(:location_id) %>:</strong>&nbsp;&nbsp;<%= @location_for_map %></li>
 
                       <li><dt><strong><%= model_class.human_attribute_name(:start_date) %>;</strong> &nbsp;&nbsp;
                     <%= @event.start_date %></li>
@@ -79,13 +76,9 @@
         <!-- /.row -->
 </br>
 </br>
-          <div id="map-canvas">          </div>
-
-            <div id="geocoding_fields">
-              <%= text_field_tag :search, params['doha'], placeholder: "doha", :id => 'search_box_geocoding', class: 'search_box' %>
-              <%= button_tag "Search", id: "submit_button_geocoding", data: { disable_with: "Please wait..." }, class: "submit_button" %>
-            </div>
-
+          <div id="map-canvas">
+          </div>
+<%= hidden_field_tag :search, params[:search], :id => 'search_box_geocoding', value: @location_for_map %>
 
 
 <div style="margin-left:42%;">

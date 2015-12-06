@@ -3,96 +3,86 @@
 
 <head>
 
-    <title>Cevente</title>
+  <title>Cevente</title>
 
-    <!-- Bootstrap Core CSS -->
+  <!-- Bootstrap Core CSS -->
 
-    <!-- Custom CSS -->
+  <!-- Custom CSS -->
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
 </head>
-
 <body>
+  <!-- Page Content -->
+  <div class="container">
+    <!-- Page Heading -->
+    <div class="row">
+      <h1 class="page-header">My Events
+        <small></small>
+      </h1>
+    </div>
+    <% if Event.find_by_user_id(current_user.id).nil? %>
 
+    <div class="row">
 
+    </br>
+  </br>
+  <div class="well well-sm">
+  </br>
+  <h4 style="margin-left:20%; margin-right:20%;"><p style="color:red;"> It seems that you have no events created .... </p> </br><p> Click the button below and create a memorable event for you and your friends</p>  </h4>
+</br>
 
+<%= link_to "Create an event", "/events/new",class:"btn btn-primary", style:"width:16%; margin-left:42%; margin-right:42%; float:center;" %>
+</br>
 
-    <!-- Page Content -->
-    <div class="container">
-
-        <!-- Page Heading -->
-        <div class="row">
-                <h1 class="page-header">My Events
-                    <small></small>
-                </h1>
 </div>
-<% if Event.find_by_user_id(current_user.id).nil? %>
+</div>
+</br>
+</br>
+</br>
+<% end %>
+<!-- /.row -->
+
+<!-- Project One -->
+<% @events.each do |event| %>
+<% if current_user.id == event.user_id  %>
 
 <div class="row">
+  <div class="span5">
+    <a href="#">
+      <%= image_tag event.image.url, :class =>"img-rounded img-responsive",size: "200x200" %>
 
-                  </br>
-                  </br>
-                <div class="well well-sm">
-                  </br>
-                    <h4 style="margin-left:20%; margin-right:20%;"><p style="color:red;"> It seems that you have no events created .... </p> </br><p> Click the button below and create a memorable event for you and your friends</p>  </h4>
-                  </br>
-
-              <%= link_to "Create an event", "/events/new",class:"btn btn-primary", style:"width:16%; margin-left:42%; margin-right:42%; float:center;" %>
-                </br>
-
-              </div>
+    </a>
+  </div>
+  <div class="span6">
+    <h3><%= link_to event.title, event_path(event)  %></h3>
+    <h4><%= Location.find(event.location_id).city %>, <%= Location.find(event.location_id).country %></h4>
+    <%= event.desc %><br/>
+    start date: <%= event.start_date.to_date %>
+  </div>
 </div>
-    </br>
-    </br>
-    </br>
+<!-- /.row -->
+
+<hr>
 <% end %>
-        <!-- /.row -->
 
-        <!-- Project One -->
-        <% @events.each do |event| %>
-          <% if current_user.id == event.user_id  %>
+<% end %>
 
-        <div class="row">
-            <div class="span5">
-                <a href="#">
-                <%= image_tag event.image.url, :class =>"img-rounded img-responsive",size: "200x200" %>
+<!-- Footer -->
 
-                </a>
-            </div>
-            <div class="span6">
-                <h3><%= link_to event.title, event_path(event)  %></h3>
-                <h4><%= event.location_id %></h4>
-                <%= event.desc %><br/>
-                <%= event.start_date %>
-                <%= event.end_date %>
-            </div>
-        </div>
-        <!-- /.row -->
+</div>
+<!-- /.container -->
 
-        <hr>
-          <% end %>
+<!-- jQuery -->
+<!--  <script src="js/jquery.js"></script>-->
 
-        <% end %>
-
-
-        <!-- Footer -->
-
-
-    </div>
-    <!-- /.container -->
-
-    <!-- jQuery -->
-  <!--  <script src="js/jquery.js"></script>-->
-
-    <!-- Bootstrap Core JavaScript -->
-  <!--  <script src="js/bootstrap.min.js"></script>-->
+<!-- Bootstrap Core JavaScript -->
+<!--  <script src="js/bootstrap.min.js"></script>-->
 
 </body>
-
 </html>

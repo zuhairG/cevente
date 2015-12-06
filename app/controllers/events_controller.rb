@@ -67,6 +67,8 @@ load_and_authorize_resource
     # Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])
+      @location = Location.find(@event.location_id)
+      @location_for_map = @location.address1 + ',' + @location.address2 + ',' + @location.city + ',' + @location.country
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
