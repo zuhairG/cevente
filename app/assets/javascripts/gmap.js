@@ -46,10 +46,10 @@ function loadScript() {
 	console.log("map loading ...");
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  //'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBJYFdplGeKUUEmGZ-vL4ydiSZ09Khsa_o&sensor=false&libraries=drawing'
+  //'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBXtzSXf5LQfdynq5sq0k1HyAuqlpOKJlI&sensor=false&libraries=drawing'
   script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp' +
     //'&v=3.14'+
-    //'&key=AIzaSyBJYFdplGeKUUEmGZ-vL4ydiSZ09Khsa_o'+
+    //'&key=AIzaSyBXtzSXf5LQfdynq5sq0k1HyAuqlpOKJlI+
     '&libraries=drawing'+
     '&callback=initialize';
   document.body.appendChild(script);
