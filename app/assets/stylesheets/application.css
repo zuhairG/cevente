@@ -1292,7 +1292,7 @@ h2.portfolio-text::after {
 }
 #map-canvas
 {
-	height: 150px;
+	height: 250px;
 }
 input[placeholder], [placeholder], *[placeholder] {
     color: #212A3F !important;
