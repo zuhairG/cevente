@@ -40,6 +40,25 @@
         <%= f.date_field :dob, autofocus: true %>
     </div>
 
+    <div class="field" style="color:black;">
+        <%= f.label :city %>
+        <%= f.text_field :city, autofocus: true %>
+    </div>
+
+    <div class="field" style="color:black;">
+        <%= f.label :state %>
+        <%= f.text_field :state, autofocus: true %>
+    </div>
+
+    <div class="field" style="color:black;">
+        <%= f.label :country %>
+        <%= f.country_select :country %>
+    </div>
+
+
+
+
+
   <div class="field" style="color:black;">
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true %>
