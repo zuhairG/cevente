@@ -23,28 +23,25 @@
     <div class="controls">
       <%= f.text_field :title, :class => 'form-control' %>
     </div>
-    <%= error_span(@event[:title]) %>
   </div>
+
   <div class="control-group">
     <%= f.label :location_id, :class => 'control-label'  %>
     <div class="controls">
       <%= collection_select(:event, :location_id, Location.by_user(current_user), :id, :title)%>
     </div>
-    <%= error_span(@event[:location_id]) %>
   </div>
   <div class="control-group">
     <%= f.label :desc, :class => 'control-label' %>
     <div class="controls">
  <%= f.text_field :desc, :class => 'form-control' %>
     </div>
-    <%= error_span(@event[:desc]) %>
   </div>
   <div class="control-group">
     <%= f.label :start_date, :class => 'control-label' %>
     <div class="controls">
       <%= f.date_field :start_date, :class => 'form-control' %>
     </div>
-    <%= error_span(@event[:start_date]) %>
   </br>
   </div>
   <div class="control-group">
@@ -52,7 +49,6 @@
     <div class="controls">
       <%= f.date_field :end_date, :class => 'form-control' %>
     </div>
-    <%= error_span(@event[:end_date]) %>
   </div>
 
 </br>
@@ -62,7 +58,6 @@
     <div class="controls">
       <%= f.check_box :free_food, :class => 'form-control' %>
     </div>
-    <%= error_span(@event[:free_food]) %>
   </div>
 
 </div>
@@ -73,7 +68,6 @@
     <div class="controls">
       <%= f.text_field :status, :class => 'form-control' %>
     </div>
-    <%= error_span(@event[:status]) %>
   </div>
 
 
@@ -84,28 +78,24 @@
       <!-- <%= f.select :event_type_id, :class => 'form-control' %> -->
       <%= f.select(:event_type_id, ['Public', 'Private'], {}, { :class => 'form-control' }) %>
     </div>
-    <%= error_span(@event[:event_type_id]) %>
   </div>
   <div class="control-group">
     <%= f.label :num_views, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :num_views, :class => 'form-control' %>
     </div>
-    <%= error_span(@event[:num_views]) %>
   </div>
   <div class="control-group">
     <%= f.label :rsvp_max, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :rsvp_max, :class => 'form-control' %>
     </div>
-    <%= error_span(@event[:rsvp_max]) %>
   </div>
   <div class="control-group">
     <%= f.label :image, :class => 'control-label' %>
     <div class="controls">
       <%= f.file_field :image, :class => 'form-control' %>
     </div>
-    <%= error_span(@event[:image]) %>
   </div>
 <div style="margin-left:38%;">
 </br>
