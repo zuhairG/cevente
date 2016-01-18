@@ -10,14 +10,16 @@
   <dd><%= @location.address1 %></dd>
   <dt><strong><%= model_class.human_attribute_name(:address2) %>:</strong></dt>
   <dd><%= @location.address2 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:country) %>:</strong></dt>
-  <dd><%= @location.country %></dd>
   <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
   <dd><%= @location.city %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:zipcode) %>:</strong></dt>
-  <dd><%= @location.zipcode %></dd>
   <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
   <dd><%= @location.state %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:country) %>:</strong></dt>
+  <dd><%= @location.country %></dd>
+
+  <dt><strong><%= model_class.human_attribute_name(:zipcode) %>:</strong></dt>
+  <dd><%= @location.zipcode %></dd>
+
   <dt><strong><%= model_class.human_attribute_name(:phone_num) %>:</strong></dt>
   <dd><%= @location.phone_num %></dd>
 </dl>
