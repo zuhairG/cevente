@@ -1,29 +1,37 @@
 <%- model_class = Location -%>
+<div class="container">
+    <div class="row">
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
-
+</div></div>
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
   <dd><%= @location.title %></dd>
+  <br>
   <dt><strong><%= model_class.human_attribute_name(:address1) %>:</strong></dt>
   <dd><%= @location.address1 %></dd>
+  <br>
   <dt><strong><%= model_class.human_attribute_name(:address2) %>:</strong></dt>
   <dd><%= @location.address2 %></dd>
+  <br>
   <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
   <dd><%= @location.city %></dd>
+  <br>
   <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
   <dd><%= @location.state %></dd>
+  <br>
   <dt><strong><%= model_class.human_attribute_name(:country) %>:</strong></dt>
   <dd><%= @location.country %></dd>
-
+<br>
   <dt><strong><%= model_class.human_attribute_name(:zipcode) %>:</strong></dt>
   <dd><%= @location.zipcode %></dd>
-
+<br>
   <dt><strong><%= model_class.human_attribute_name(:phone_num) %>:</strong></dt>
   <dd><%= @location.phone_num %></dd>
 </dl>
-
+<div style="margin-left:43%;">
+<br>
 <%= link_to t('.back', :default => t("helpers.links.back")),
               locations_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -33,3 +41,7 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+            </div>
+
+
+            <br><br>
