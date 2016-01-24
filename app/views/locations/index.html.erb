@@ -27,6 +27,7 @@
   </thead>
   <tbody>
     <% @locations.each do |location| %>
+    <% if location.user_id == current_user.id %>
       <tr>
         <!-- <td><%= link_to location.id, location_path(location) %></td> -->
         <td><%= location.title %></td>
@@ -49,6 +50,7 @@
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
+        <% end %>
         <% end %>
         </td>
       </tr>
