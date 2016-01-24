@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :rsvp, :invite]
 
 
 load_and_authorize_resource
@@ -28,6 +28,8 @@ load_and_authorize_resource
   def create
     @event = Event.new(event_params)
     @event.user_id = current_user.id
+    @event.event_members.build({invitable: current_user, rsvp_status: :attending})
+
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -62,6 +64,49 @@ load_and_authorize_resource
       format.json { head :no_content }
     end
   end
+
+  def rsvp
+     # find current_user member
+     if params[:invitation_token]
+      # find member by invitation_token
+      event_member = @event.accept_invitation(params[:invitation_token], current_user)
+      if (!event_member)
+        # invalid token
+      end
+    else
+     event_member = @event.event_members.where(["invitable_id = ?", current_user.id])[0]
+    end
+     if event_member
+       event_member.rsvp_status = params[:rsvp_status]
+     else
+       # no member, so create one
+       #event_member = @event.event_members.build({invitable: current_user, rsvp_status: :attending})
+     end
+     if event_member.save
+       redirect_to @event, notice: 'Status was successfully updated.'
+     else
+       redirect_to @event, notice: 'Status could not be saved.'
+     end
+   end
+
+   def invite
+  params[:invitations][:emails].split(",").each do |email|
+    # find user-member by email or use email as invitation_key
+    if member = @event.invite(User.find_by_email(email) || email)
+      # send invitation email
+      EventMailer.invitation(email, @event, member, current_user).deliver
+  else
+    #if user does not exist create an event member instance for that email 
+    member = @event.event_members.build({invitation_token: email, rsvp_status: :pending})
+    EventMailer.invitation(email, @event, member, current_user).deliver
+
+  end
+  end
+  respond_to do |format|
+    format.html { redirect_to @event, notice: 'Invitations have been successfully sent.' }
+    format.json { head :no_content }
+  end
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.

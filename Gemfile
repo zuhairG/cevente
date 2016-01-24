@@ -52,3 +52,5 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'paperclip'
 gem 'cancancan'
+gem 'attendable',   github: 'rexblack/attendable'
+gem 'mail'

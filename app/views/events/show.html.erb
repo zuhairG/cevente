@@ -2,7 +2,11 @@
 
 <body>
 
+  <% @event.attendees.each do |user| %>
+    <p><%= user.first_name %> <%= user.email %> </p>
+  <% end %>
 
+  <%= link_to(@event.is_attending?(current_user) ? "Refuse" : "Attend", rsvp_event_path(@event, {rsvp_status: @event.is_attending?(current_user) ? :declined : :attending})) %>
 
     <!-- Page Content -->
     <div class="container">
@@ -48,14 +52,22 @@
 
                 </ul>
 
-
+                <% if current_user.id = @event.user_id %>
+                <p> invite your friends to this event </p><i>(Emails seperated by commas)</i>
+                  <%= form_for :invitations , url: invite_event_path(@event), :html=> { class: 'modal-content' } do |f| %>
+                      <%=f.text_field :emails %>
+                      <%= f.submit 'Send', class: 'btn btn-primary'%>
+                <%end%>
+                  <%end%>
             </div>
+
 
 
 
 
         </div>
         <!-- /.row -->
+
 </br>
 </br>
           <div id="map-canvas">
@@ -77,6 +89,7 @@
               :class => 'btn btn-danger' %>
 </br>
 </br>
+
 </br>
 </br>
 </div>

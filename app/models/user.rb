@@ -16,5 +16,6 @@ class User < ActiveRecord::Base
    has_many  :organization , :through => :user_org
    has_many :rsvps
    TYPE = ['Student', 'Alumni']
+   
 
 end

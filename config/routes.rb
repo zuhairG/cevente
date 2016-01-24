@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   get "/welcome/:studentindex" => "studentindex#show"
 
 end
+resources :events do
+  member do
+    get 'rsvp'
+    post 'invite'
+  end
+end
 
   resources :user_orgs
   resources :event_types
