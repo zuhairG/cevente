@@ -8,44 +8,15 @@
         <![endif]-->
     <!-- BOOTSTRAP STYLE SHEET -->
 
-    <%= stylesheet_link_tag "bootstrap" %>
 
      <!-- CUSTOM STYLE CSS -->
-    <style type="text/css">
 
-               .btn-social {
-            color: white;
-            opacity: 0.8;
-        }
-
-            .btn-social:hover {
-                color: white;
-                opacity: 1;
-                text-decoration: none;
-            }
-
-        .btn-facebook {
-            background-color: #3b5998;
-        }
-
-        .btn-twitter {
-            background-color: #00aced;
-        }
-
-        .btn-linkedin {
-            background-color: #0e76a8;
-        }
-
-        .btn-google {
-            background-color: #c32f10;
-        }
-    </style>
 </head>
 <body >
 
     <!-- NAVBAR CODE END -->
     <div class="container">
-        <section style="padding-bottom: 50px; padding-top: 50px;">
+        <section style="padding-bottom: 50px; padding-top: 50px; width:40%; float:left;">
             <div class="row">
                 <div class="col-md-4">
 
@@ -55,6 +26,7 @@
                   <%= image_tag @user.image.url, :class =>"img-rounded img-responsive",size: "250x250" %>
                   <%= f.file_field :image %>
                     <br />
+                      <br>
                     <label><%= f.label :first_name %></label>
                     <%= f.text_field :first_name, autofocus: true, class: "form-control", placeholder: resource.first_name%>
                     <label><%= f.label :last_name %></label>
@@ -66,36 +38,32 @@
                         <label> <%= f.label :state %></label>
                           <%= f.text_field :state, autofocus: true, class: "form-control", placeholder: resource.state%>
                           <label> <%= f.label :country %></label>
-                          <br>
                             <%= f.country_select :country, autofocus: true, class: "form-control", placeholder: resource.country%>
                     <br /><br/>
                 </div>
+                  </div>
+                  </section>
                 <div class="col-md-8">
-                    <div class="alert alert-info" style="margin-bottom:9.25px;">
+                    <div class="alert alert-info" style="margin-bottom: 5%; margin-top: 12%;  width: 50%; float:right;">
+
                         <h2>My Profile </h2>
                         <h5>Bootstrap user profile template </h5>
                         <p>
 
                         </p>
 
-                        <a href="#" class="btn btn-social btn-facebook">
-                            <i class="fa fa-facebook"></i>&nbsp; Facebook</a>
-                        <a href="#" class="btn btn-social btn-google">
-                            <i class="fa fa-google-plus"></i>&nbsp; Google</a>
-                        <a href="#" class="btn btn-social btn-twitter">
-                            <i class="fa fa-twitter"></i>&nbsp; Twitter </a>
-                        <a href="#" class="btn btn-social btn-linkedin">
-                            <i class="fa fa-linkedin"></i>&nbsp; Linkedin </a>
+
                     </div>
+                  </div>
+
       <br>
       <br>
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-8" style="margin-right: 4.5%; margin-bottom: 5%;  width: 50%; float:right;">
 
 
 
                         <h3>Change Your Password</h3>
-                        <br>
-                        <br>
+
 
                         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -118,13 +86,12 @@
                 <h3>Cancel my account</h3>
                 <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete,class:"btn btn-warning" %>
               </div>
-            </div>
 
             </div>
             <!-- ROW END -->
 
 
-        </section>
+
         <!-- SECTION END -->
     </div>
     <!-- CONATINER END -->

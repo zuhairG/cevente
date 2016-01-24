@@ -28,6 +28,7 @@ end
   # You can have the root of your site routed with "root"
    root 'welcome#index'
    get "/about" , :to => "welcome#about"
+   get "/faq" , :to => "welcome#faq"
 
    get "/contact" , :to => "welcome#contact"
 
