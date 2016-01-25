@@ -30,25 +30,41 @@
                 <p><%= @event.desc %></p>
                 <h3>Project Details</h3>
                 <ul>
-
+  <% if @event.title != nil %>
                     <li>  <strong><%= model_class.human_attribute_name(:title) %>:</strong> &nbsp;&nbsp;<%= @event.title %></li>
+<%end%>
+  <% if @event.location_id != nil %>
                       <li><strong><%= model_class.human_attribute_name(:location_id) %>:</strong>&nbsp;&nbsp;<%= @location_for_map %></li>
-
+<%end%>
+  <% if @event.start_date != nil %>
                       <li><dt><strong><%= model_class.human_attribute_name(:start_date) %>;</strong> &nbsp;&nbsp;
                     <%= @event.start_date %></li>
+                    <%end%>
+                      <% if @event.end_date != nil %>
                     <li>  <dt><strong><%= model_class.human_attribute_name(:end_date) %>:</strong>&nbsp;&nbsp;
                     <%= @event.end_date %></li>
+                    <%end%>
+                      <% if @event.free_food != nil %>
                     <li>  <dt><strong><%= model_class.human_attribute_name(:free_food) %>:</strong>&nbsp;&nbsp;
                     <%= @event.free_food %></li>
+                    <%end%>
+                      <% if @event.status != nil %>
                     <li>  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong>&nbsp;&nbsp;
                     <%= @event.status %></li>
+                    <%end%>
+                      <% if @event.event_type_id != nil %>
                     <li>  <dt><strong><%= model_class.human_attribute_name(:event_type_id) %>:</strong>&nbsp;&nbsp;
                     <%= @event.event_type_id %></li>
+                    <%end%>
+                    <% if @event.num_views != nil %>
+
                     <li> <strong><%= model_class.human_attribute_name(:num_views) %>:</strong>&nbsp;&nbsp;
                     <%= @event.num_views %></li>
+                    <%end%>
+                    <% if @event.rsvp_max != nil %>
                   <li>   <strong><%= model_class.human_attribute_name(:rsvp_max) %>:</strong>&nbsp;&nbsp;
                     <%= @event.rsvp_max %></li>
-
+<%end%>
 
                 </ul>
 
