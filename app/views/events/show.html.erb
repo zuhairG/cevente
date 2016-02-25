@@ -1,3 +1,4 @@
+
 <%- model_class = Event -%>
 
 <body>
@@ -6,7 +7,6 @@
     <p><%= user.first_name %> <%= user.email %> </p>
   <% end %>
 
-  <%= link_to(@event.is_attending?(current_user) ? "Refuse" : "Attend", rsvp_event_path(@event, {rsvp_status: @event.is_attending?(current_user) ? :declined : :attending})) %>
 
     <!-- Page Content -->
     <div class="container">
@@ -66,7 +66,31 @@
                     <%= @event.rsvp_max %></li>
 <%end%>
 
-                </ul>
+</br>
+<script type="text/javascript">
+function Yes(hello) {
+
+if (hello.value == "Not attending")
+{
+hello.value = "Attending";
+}
+else
+{
+hello.value = "Not attending";
+}
+
+
+}
+
+</script>
+<%= link_to(@event.is_attending?(current_user) ? "Refuse" : "Attend", rsvp_event_path(@event, {rsvp_status: @event.is_attending?(current_user) ? :declined : :attending})) %>
+
+<form>
+<p>  <strong> Status : </strong></p>
+<input  id="yesbutton" type="button" onclick="Yes(this)" value="Attending" class="btn btn-primary btn-md">
+</form>
+
+        </ul>
 
                 <% if current_user.id = @event.user_id %>
                 <p> invite your friends to this event </p><i>(Emails seperated by commas)</i>
