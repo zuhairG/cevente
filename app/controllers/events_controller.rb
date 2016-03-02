@@ -80,7 +80,7 @@ load_and_authorize_resource
        event_member.rsvp_status = params[:rsvp_status]
      else
        # no member, so create one
-       #event_member = @event.event_members.build({invitable: current_user, rsvp_status: :attending})
+       event_member = @event.event_members.build({invitable: current_user, rsvp_status: :attending})
      end
      if event_member.save
        redirect_to @event, notice: 'Status was successfully updated.'
@@ -96,7 +96,7 @@ load_and_authorize_resource
       # send invitation email
       EventMailer.invitation(email, @event, member, current_user).deliver
   else
-    #if user does not exist create an event member instance for that email 
+    #if user does not exist create an event member instance for that email
     member = @event.event_members.build({invitation_token: email, rsvp_status: :pending})
     EventMailer.invitation(email, @event, member, current_user).deliver
 

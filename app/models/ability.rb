@@ -18,6 +18,7 @@ class Ability
     else
       can :read, :all
       cannot :read, :studentindex
+      #can :rsvp, Event
     end
 
     #else

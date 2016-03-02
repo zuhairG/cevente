@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
 rescue_from CanCan::AccessDenied do |e|
     flash[:error] = "Access Denied"
-    redirect_to root_url
+    redirect_to users_sign_in_path
 
 
 end

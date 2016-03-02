@@ -51,6 +51,7 @@
 
 
                 </ul>
+                <% if current_user %>
 
                 <% if current_user.id = @event.user_id %>
                 <p> invite your friends to this event </p><i>(Emails seperated by commas)</i>
@@ -59,6 +60,8 @@
                       <%= f.submit 'Send', class: 'btn btn-primary'%>
                 <%end%>
                   <%end%>
+                  <%end%>
+
             </div>
 
 
