@@ -1,3 +1,4 @@
+
 <%- model_class = Event -%>
 
 <body>
@@ -6,7 +7,6 @@
     <p><%= user.first_name %> <%= user.email %> </p>
   <% end %>
 
-  <%= link_to(@event.is_attending?(current_user) ? "Refuse" : "Attend", rsvp_event_path(@event, {rsvp_status: @event.is_attending?(current_user) ? :declined : :attending})) %>
 
     <!-- Page Content -->
     <div class="container">
@@ -30,29 +30,49 @@
                 <p><%= @event.desc %></p>
                 <h3>Project Details</h3>
                 <ul>
-
+  <% if @event.title != nil %>
                     <li>  <strong><%= model_class.human_attribute_name(:title) %>:</strong> &nbsp;&nbsp;<%= @event.title %></li>
+<%end%>
+  <% if @event.location_id != nil %>
                       <li><strong><%= model_class.human_attribute_name(:location_id) %>:</strong>&nbsp;&nbsp;<%= @location_for_map %></li>
-
+<%end%>
+  <% if @event.start_date != nil %>
                       <li><dt><strong><%= model_class.human_attribute_name(:start_date) %>;</strong> &nbsp;&nbsp;
-                    <%= @event.start_date %></li>
+                    <%= @event.start_date.to_date %></li>
+                    <%end%>
+                      <% if @event.end_date != nil %>
                     <li>  <dt><strong><%= model_class.human_attribute_name(:end_date) %>:</strong>&nbsp;&nbsp;
-                    <%= @event.end_date %></li>
+                    <%= @event.end_date.to_date %></li>
+                    <%end%>
+                      <% if @event.free_food != nil %>
                     <li>  <dt><strong><%= model_class.human_attribute_name(:free_food) %>:</strong>&nbsp;&nbsp;
                     <%= @event.free_food %></li>
+                    <%end%>
+                      <% if @event.status != nil %>
                     <li>  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong>&nbsp;&nbsp;
                     <%= @event.status %></li>
+                    <%end%>
+                      <% if @event.event_type_id != nil %>
                     <li>  <dt><strong><%= model_class.human_attribute_name(:event_type_id) %>:</strong>&nbsp;&nbsp;
                     <%= @event.event_type_id %></li>
+                    <%end%>
+                    <% if @event.num_views != nil %>
+
                     <li> <strong><%= model_class.human_attribute_name(:num_views) %>:</strong>&nbsp;&nbsp;
                     <%= @event.num_views %></li>
+                    <%end%>
+                    <% if @event.rsvp_max != nil %>
                   <li>   <strong><%= model_class.human_attribute_name(:rsvp_max) %>:</strong>&nbsp;&nbsp;
                     <%= @event.rsvp_max %></li>
+<%end%>
 
+</br>
+<p>  <strong> Status : </strong></p>
+<%= link_to(@event.is_attending?(current_user) ? "Decline" : "Attend", rsvp_event_path(@event, {rsvp_status: @event.is_attending?(current_user) ? :declined : :attending}),class:"btn btn-primary btn-md") %>
 
-                </ul>
+            </ul>
                 <% if current_user %>
-
+        </ul>
                 <% if current_user.id = @event.user_id %>
                 <p> invite your friends to this event </p><i>(Emails seperated by commas)</i>
                   <%= form_for :invitations , url: invite_event_path(@event), :html=> { class: 'modal-content' } do |f| %>

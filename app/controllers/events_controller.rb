@@ -83,7 +83,7 @@ load_and_authorize_resource
        event_member = @event.event_members.build({invitable: current_user, rsvp_status: :attending})
      end
      if event_member.save
-       redirect_to @event, notice: 'Status was successfully updated.'
+       redirect_to @event, notice: 'You have successfully RSVPed to this event.'
      else
        redirect_to @event, notice: 'Status could not be saved.'
      end
