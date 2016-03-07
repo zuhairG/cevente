@@ -49,29 +49,41 @@
 <!-- /.row -->
 
 <!-- Project One -->
+<table>
 <% @events.each do |event| %>
 <% if current_user && current_user.id == event.user_id  %>
 
-<div class="row">
-  <div class="span5">
-    <a href="#">
-      <%= image_tag event.image.url, :class =>"img-rounded img-responsive",size: "200x200" %>
+<tr>
 
+  <td>
+  <a href="#">
+      <%= image_tag event.image.url, :class =>"img-rounded img-responsive",size: "200x200" %>
     </a>
-  </div>
-  <div class="span6">
+</td>
+
+<td>
+    <div style="margin-left:20%; width:60%;">
     <h3><%= link_to event.title, event_path(event)  %></h3>
     <h4><%= Location.find(event.location_id).city %>, <%= Location.find(event.location_id).country %></h4>
     <%= event.desc %><br/>
     start date: <%= event.start_date.to_date %>
   </div>
-</div>
-<!-- /.row -->
+<br>
+</td>
 
-<hr>
+
+</tr>
+<tr>
+  <td>
+    <br>
+    <br>
+  </td>
+</tr>
+
 <% end %>
 
 <% end %>
+</table>
 
 <!-- Footer -->
 

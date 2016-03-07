@@ -1,64 +1,91 @@
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
-    <!-- BOOTSTRAP STYLE SHEET -->
-
-
-     <!-- CUSTOM STYLE CSS -->
-
-</head>
-<body >
-
-    <!-- NAVBAR CODE END -->
     <div class="container">
-        <section style="padding-bottom: 50px; padding-top: 50px; width:40%; float:left;">
-            <div class="row">
-                <div class="col-md-4">
+<table>
+  <td width='25%'>
+<table style="float:left;">
+  <div class="form-group">
+  <tr>
+    <td>
 
                   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
                     <%= devise_error_messages! %>
 
+
+
                   <%= image_tag @user.image.url, :class =>"img-rounded img-responsive",size: "250x250" %>
                   <%= f.file_field :image %>
-                    <br />
-                      <br>
-                    <label><%= f.label :first_name %></label>
-                    <%= f.text_field :first_name, autofocus: true, class: "form-control", placeholder: resource.first_name%>
-                    <label><%= f.label :last_name %></label>
-                      <%= f.text_field :last_name, autofocus: true, class: "form-control", placeholder: resource.last_name%>
-                    <label> <%= f.label :email %></label>
-                      <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: resource.email%>
-                      <label> <%= f.label :city %></label>
-                        <%= f.text_field :city, autofocus: true, class: "form-control", placeholder: resource.city%>
-                        <label> <%= f.label :state %></label>
-                          <%= f.text_field :state, autofocus: true, class: "form-control", placeholder: resource.state%>
-                          <label> <%= f.label :country %></label>
-                            <%= f.country_select :country, autofocus: true, class: "form-control", placeholder: resource.country%>
-                    <br /><br/>
+</td>
+</tr>
+<div class="form-group">
+
+<tr>
+  <td>
+                    <%= f.label :first_name%></td>
+                <td>    <%= f.text_field :first_name, autofocus: true , :style =>'margin-bottom:4%; ', placeholder: resource.first_name%></td>
                 </div>
-                  </div>
-                  </section>
-                <div class="col-md-8">
-                    <div class="alert alert-info" style="margin-bottom: 5%; margin-top: 12%;  width: 50%; float:right;">
 
-                        <h2>My Profile </h2>
-                        <h5>Bootstrap user profile template </h5>
-                        <p>
+</tr>
+<tr>
+<div class="form-group">
+  <td>
+                <%= f.label :last_name %></td>
+                <td>      <%= f.text_field :last_name, autofocus: true,:style =>'margin-bottom:4%; ',  placeholder: resource.last_name%></td>
+</div>
 
-                        </p>
+</tr>
+<tr>
+<div class="form-group">
+      <td>           <%= f.label :email %> </td>
+      <td>                <%= f.email_field :email, autofocus: true,:style =>'margin-bottom:4%;',placeholder: resource.email%> </td>
+  </div>
+
+</tr>
+
+<tr>
+  <div class="form-group">
+    <td>          <%= f.label :city %></td>
+    <td>                    <%= f.text_field :city, autofocus: true,:style =>'margin-bottom:4%;',  placeholder: resource.city%> </td>
+                      </div>
+
+</tr>
+<tr>
+  <div class="form-group">
+  <td>            <%= f.label :state %>  </td>
+  <td>            <%= f.text_field :state, autofocus: true, :style =>'margin-bottom:4%; ', placeholder: resource.state%> </td>
+                        </div>
+
+</tr>
+<tr>
+  <div class="form-group">
+          <td >        <%= f.label :country %>
+
+
+
+                    <%= f.country_select :country,
+                             placeholder:
+                            resource.country, :style =>'width:-10%;'%>       </td>
+  </div>
+
+</tr>
+</div>
+
+</table>
+</td>
+<td>
+<br>
+<table style="float:left; width:70%;">
+<tr>
+<td>
+
+                    <div class="alert alert-info" style="width: 60%; height:15; margin-left:22%; margin-right:36%;">
+
+                        <h2>Update My Profile </h2>
+
 
 
                     </div>
-                  </div>
 
-      <br>
-      <br>
-                    <div class="form-group col-md-8" style="margin-right: 4.5%; margin-bottom: 5%;  width: 50%; float:right;">
+                    <div class="form-group col-md-8" style=" margin-bottom: 5%; margin-top:2%; width: 80%; float:right;">
 
 
 
@@ -68,9 +95,11 @@
                         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
                         <% end %>
+
                         <label><%= f.label :current_password %> <i>(needed to confirm your changes)</i></label>
                         <%= f.password_field :current_password, autocomplete: "off", class:"form-control" %>
                         <label><%= f.label :password %> <i>(leave blank if you don't want to change it)</i></label>
+
                         <%= f.password_field :password, autocomplete: "off", class:"form-control" %>
                         <label>  <%= f.label :password_confirmation %></label>
                         <%= f.password_field :password_confirmation, autocomplete: "off",class:"form-control"  %>
@@ -80,12 +109,19 @@
 
                 <%= link_to "Back", root_path,class:"btn btn-warning"  %>
                 <%= f.submit "Update", class:"btn btn-success" %>
-                <% end %>
-              </br ><br>
 
                 <h3>Cancel my account</h3>
                 <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete,class:"btn btn-warning" %>
-              </div>
+  </div>
+
+                <% end %>
+
+              </br ><br>
+</td>
+</tr>
+  </table>
+</td>
+</table>
 
             </div>
             <!-- ROW END -->
@@ -93,7 +129,6 @@
 
 
         <!-- SECTION END -->
-    </div>
     <!-- CONATINER END -->
 
     <!-- REQUIRED SCRIPTS FILES -->
@@ -101,6 +136,3 @@
     <script src="assets/js/jquery-1.11.1.js"></script>
     <!-- REQUIRED BOOTSTRAP SCRIPTS -->
     <script src="assets/js/bootstrap.js"></script>
-</body>
-
-</html>

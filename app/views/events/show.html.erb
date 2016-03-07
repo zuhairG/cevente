@@ -3,9 +3,6 @@
 
 <body>
 
-  <% @event.attendees.each do |user| %>
-    <p><%= user.first_name %> <%= user.email %> </p>
-  <% end %>
 
 
     <!-- Page Content -->
@@ -20,12 +17,14 @@
         </div>
         <!-- /.row -->
         <!-- Portfolio Item Row -->
-        <div class="row">
-            <div class="col-md-2" style="width:50%; float:left;">
+<table style="margin-bottom:4%;" >
+    <tr>
+      <td>
                 <img class="img-responsive">   <%=image_tag @event.image.url%> </img>
-            </div>
-            <div class="col-md-4" style="width:50%; float:right;">
-            </br>
+      </td>
+
+      <td>
+        <div style="margin-left:50%; width:120%">
                 <h3>Project Description</h3>
                 <p><%= @event.desc %></p>
                 <h3>Project Details</h3>
@@ -65,42 +64,66 @@
                   <li>   <strong><%= model_class.human_attribute_name(:rsvp_max) %>:</strong>&nbsp;&nbsp;
                     <%= @event.rsvp_max %></li>
 <%end%>
+</ul>
 
-</br>
+
+
 <p>  <strong> Status : </strong></p>
 <%= link_to(@event.is_attending?(current_user) ? "Decline" : "Attend", rsvp_event_path(@event, {rsvp_status: @event.is_attending?(current_user) ? :declined : :attending}),class:"btn btn-primary btn-md") %>
-
-            </ul>
+</br>
                 <% if current_user %>
-        </ul>
                 <% if current_user.id = @event.user_id %>
+                <br>
                 <p> invite your friends to this event </p><i>(Emails seperated by commas)</i>
-                  <%= form_for :invitations , url: invite_event_path(@event), :html=> { class: 'modal-content' } do |f| %>
+                  <%= form_for :invitations , url: invite_event_path(@event) do |f| %>
                       <%=f.text_field :emails %>
                       <%= f.submit 'Send', class: 'btn btn-primary'%>
                 <%end%>
                   <%end%>
                   <%end%>
 
-            </div>
+
+</div>
 
 
+</td>
+</tr>        <!-- /.row -->
+<tr>
+<td>
+  <br>
+  <br>
+  <br>
+  <br>
 
-
-
-        </div>
-        <!-- /.row -->
-
-</br>
-</br>
           <div id="map-canvas">
-          </div>
+
 <%= hidden_field_tag :search, params[:search], :id => 'search_box_geocoding', value: @location_for_map %>
+  </div>
+</td>
+<td>
+  <div style="margin-left:50%; width:120%">
 
 
-<div style="margin-left:42%;">
-</br>
-</br>
+<table>
+  <tr>
+    <% @event.attendees.each do |user| %>
+    <td>
+      <p><%= user.first_name %> <%= user.last_name %> </p>
+    </td>
+    </tr>
+    <% end %>
+</table>
+
+
+
+  </div>
+
+</td>
+</tr>
+</table>
+
+<div style="margin-left:42%; margin-bottom:6%;">
+
 <%= link_to t('.back', :default => t("helpers.links.back")),
               events_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -110,11 +133,7 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
-</br>
-</br>
 
-</br>
-</br>
 </div>
 
             </div>
