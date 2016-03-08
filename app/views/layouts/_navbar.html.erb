@@ -1,14 +1,17 @@
-
 <div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
 
-      <b><%= link_to "Cevente", root_path, :class =>"brand" %></b>
+<nav class="navbar navbar-inverse" style="background-color: #292c2f;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+
+   <%= link_to "Cevente", root_path, :class => 'navbar-brand' %>
+</div>
+
       <% if user_signed_in? %>
 
       <ul class="nav pull-right">
                   <li class="dropdown">
-                      <a data-toggle="dropdown" class="dropdown-toggle" style="margin-top:10%;"> <span class="glyphicon glyphicon-align-justify"></span> </a>
+                      <a data-toggle="dropdown" class="dropdown-toggle" style="margin-top:10%; "> <span class="glyphicon glyphicon-align-justify"></span> </a>
                         <ul class="dropdown-menu">
                           <li>
                             <%= link_to "Home","../welcome/studentindex" %>
@@ -45,6 +48,6 @@
            </ul>
            <% end %>
 
-    </div>
   </div>
+</nav>
 </div>
