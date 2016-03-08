@@ -106,6 +106,9 @@
 
 <table>
   <tr>
+    <th> <Strong> Attendees: <Strong> </th>
+  </tr>
+  <tr>
     <% @event.attendees.each do |user| %>
     <td>
       <p><%= user.first_name %> <%= user.last_name %> </p>
