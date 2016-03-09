@@ -18,20 +18,20 @@
 <body>
 
 
-<% Event.all.each do |event| %>
     <!-- Page Content -->
     <div class="container">
 
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Page Heading
-                    <small>Secondary Text</small>
+                <h1 class="page-header">Explore
+                    <small>Local  Events</small>
                 </h1>
             </div>
         </div>
         <!-- /.row -->
-
+        <% Event.all.each do |event| %>
+<% if Location.find(event.location_id).country == current_user.country %>
         <!-- Project One -->
         <div class="row">
             <div class="span5">
@@ -40,17 +40,19 @@
                 </a>
             </div>
             <div class="span6">
-                <h3>Project One</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <h3><%= event.title%></h3>
+                <h4><%= Location.find(event.location_id).city %>, <%= Location.find(event.location_id).country %></h4>
+                <p><%= event.desc %></p>
+              <%= link_to 'View Event',  event_path(event), class:"btn btn-primary" %>
             </div>
         </div>
+
+                <hr>
         <!-- /.row -->
+        <%end%>
+<%end%>
       </div>
 
-        <%end%>
-        <hr>
 
 
         <!-- Footer -->

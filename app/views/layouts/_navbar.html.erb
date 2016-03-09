@@ -2,49 +2,33 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-
-      <b><%= link_to "Cevente", root_path, :class =>"brand" %></b>
       <% if user_signed_in? %>
-
+      <b><%= link_to "Cevente", home_path, :class =>"brand" %></b>
       <ul class="nav pull-right">
                   <li class="dropdown">
                       <a data-toggle="dropdown" class="dropdown-toggle" style="margin-top:10%;"> <span class="glyphicon glyphicon-align-justify"></span> </a>
                         <ul class="dropdown-menu">
                           <li>
-                            <%= link_to "Home","../welcome/studentindex" %>
-
+                            <%= link_to "Home",home_path %>
                           </li>
-
                           <li>
-
                             <%= link_to "Create an event", "/events/new" %>
-
                           </li>
-
                           <li>
                             <%= link_to "My Events", events_path %>
                           </li>
-
                           <li>
                               <%= link_to "Edit Profile", "/users/edit" %>
                             </li>
-
-
                           <li>
-
                             <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
                           </li>
-
                       </ul>
                   </li>
-
-
-
-
-
            </ul>
+           <% else %>
+              <b><%= link_to "Cevente", root_path, :class =>"brand" %></b>
            <% end %>
-
     </div>
   </div>
 </div>

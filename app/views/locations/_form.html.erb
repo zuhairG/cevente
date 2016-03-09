@@ -22,13 +22,13 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :address1, :class => 'control-label' %>
+    <%= f.label :address1, 'Address line 1', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :address1, :class => 'form-control' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :address2, :class => 'control-label' %>
+    <%= f.label :address2, 'Address line 2',:class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :address2, :class => 'form-control' %>
     </div>
@@ -36,7 +36,7 @@
   <div class="control-group">
     <%= f.label :country, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :country, :class => 'form-control' %>
+      <%= f.country_select :country, :class => 'form-control' %>
     </div>
   </div>
   <div class="control-group">
@@ -58,7 +58,7 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :phone_num, :class => 'control-label' %>
+    <%= f.label :phone_num,'Phone number', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :phone_num, :class => 'form-control' %>
     </div>

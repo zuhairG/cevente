@@ -63,7 +63,8 @@
     <h3><%= link_to event.title, event_path(event)  %></h3>
     <h4><%= Location.find(event.location_id).city %>, <%= Location.find(event.location_id).country %></h4>
     <%= event.desc %><br/>
-    start date: <%= event.start_date.to_date %>
+    start date: <%= event.start_date.to_date.strftime("%m/%d/%Y") %>
+
   </div>
 </div>
 <!-- /.row -->

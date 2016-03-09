@@ -22,25 +22,25 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :desc, :class => 'control-label' %>
+    <%= f.label :desc, 'Description',:class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :desc, :class => 'form-control' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :web_add, :class => 'control-label' %>
+    <%= f.label :web_add, 'Web site URL',:class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :web_add, :class => 'form-control' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :address1, :class => 'control-label' %>
+    <%= f.label :address1,'Address line 1', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :address1, :class => 'form-control' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :address2, :class => 'control-label' %>
+    <%= f.label :address2,'Address line 2', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :address2, :class => 'form-control' %>
     </div>
@@ -58,9 +58,9 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :is_uni, :class => 'control-label' %>
+    <%= f.label :is_uni, 'is a University?',:class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :is_uni, :class => 'form-control' %>
+      <%= f.check_box :is_uni, :class => 'form-control' %>
     </div>
   </div>
 

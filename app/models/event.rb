@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+
   acts_as_attendable :event_members, by: :users
 
   has_attached_file :image,
@@ -11,5 +12,11 @@ class Event < ActiveRecord::Base
   has_one :location
   belongs_to :user
   has_one :type
+
+  before_validation(on: :create) do
+    errors.add(:start_date, "must be before end time") unless
+        (self.start_date < self.end_date)
+        print 'hereeeee'
+  end
 
 end

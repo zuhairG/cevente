@@ -29,7 +29,7 @@ end
    root 'welcome#index'
    get "/about" , :to => "welcome#about"
    get "/faq" , :to => "welcome#faq"
-
+   get"/home", :to =>"welcome#studentindex"
    get "/contact" , :to => "welcome#contact"
 
   # Example of regular route:

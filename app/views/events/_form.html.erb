@@ -32,7 +32,7 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :desc, :class => 'control-label' %>
+    <%= f.label :desc,'Description', :class => 'control-label' %>
     <div class="controls">
  <%= f.text_field :desc, :class => 'form-control' %>
     </div>
@@ -42,7 +42,6 @@
     <div class="controls">
       <%= f.date_field :start_date, :class => 'form-control' %>
     </div>
-  </br>
   </div>
   <div class="control-group">
     <%= f.label :end_date, :class => 'control-label' %>
@@ -50,8 +49,6 @@
       <%= f.date_field :end_date, :class => 'form-control' %>
     </div>
   </div>
-
-</br>
 
   <div class="control-group">
     <%= f.label :free_food, :class => 'control-label' %>
@@ -79,14 +76,9 @@
       <%= f.select(:event_type_id, ['Public', 'Private'], {}, { :class => 'form-control' }) %>
     </div>
   </div>
+
   <div class="control-group">
-    <%= f.label :num_views, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :num_views, :class => 'form-control' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :rsvp_max, :class => 'control-label' %>
+    <%= f.label :rsvp_max,'Maximum number of RSVPs', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :rsvp_max, :class => 'form-control' %>
     </div>

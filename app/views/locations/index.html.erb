@@ -30,9 +30,9 @@
     <% if location.user_id == current_user.id %>
       <tr>
         <!-- <td><%= link_to location.id, location_path(location) %></td> -->
-        <td><%= location.title %></td>
-        <td><%= location.address1 %></td>
-        <td><%= location.address2 %></td>
+      <td><%= truncate(location.title.html_safe, length:20) %></td>
+        <td><%= truncate(location.address1.html_safe,length:20) %></td>
+        <td><%= truncate(location.address2.html_safe,length:20) %></td>
         <td><%= location.city %></td>
         <td><%= location.state %></td>
         <td><%= location.country %></td>
