@@ -4,13 +4,10 @@
 
 
 <body>
-    <div id="login-overlay" class="modal-dialog" style="  background-color: #645862;">
-      <div class="modal-content" style="width:30%; display: inline-block; margin-right: 10%; margin-left:5%; margin-top:6%;">
+    <div id="login-overlay" style="background-color: #645862;">
+      <div style="width:30%; display: inline-block; margin-right: 7%; margin-left:5%; margin-top:6%;">
 
-          <div class="body">
-              <div class="row">
-                  <div class="col-xs-6">
-                      <div class="well">
+                      <div class="well" style="width:90%;">
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div id="myTabContent" class="tab-content">
@@ -21,12 +18,12 @@
 								<legend class="">Login</legend>
 							</div>
               <div class="field" style="color:black;">
-                <%= f.label :email %>
+                <%= f.label :email %> </br>
                 <%= f.email_field :email, autofocus: true %>
               </div>
 </br>
               <div class="field" style="color:black;">
-                <%= f.label :password %>
+                <%= f.label :password %></br>
                 <%= f.password_field :password, autocomplete: "off" %>
               </div>
 
@@ -54,24 +51,22 @@
 
       </div>
     </div>
-  </div>
-  </div>
 </div>
 </div>
-</div>
-<div class="modal-content" style="width: 50%; display: inline-block; margin-bottom: 10%; color:white;">
+
+<div style="width: 40%; display: inline-block; margin-bottom: 10%; color:white;">
 
   <div>
-                      <p class="lead">Register now for <span class="text-success">FREE</span></p>
-                      <ul class="list-unstyled" style="line-height: 2">
-                          <li><span class="fa fa-check text-success"></span> See all events in your area</li>
-                          <li><span class="fa fa-check text-success"></span> Check who is attending</li>
-                          <li><span class="fa fa-check text-success"></span> Create your own event</li>
-                          <li><span class="fa fa-check text-success"></span> Reunite with colleagues</li>
+                      <p class="lead" style="color:black; margin-right:20%; margin-left:28%;">Register now for <span class="text-success"><b>FREE</b></span></p>
+                      <ul class="list-unstyled" style="line-height:2; margin-right:30%; margin-left:30%;">
+                          <li style="color:black;"><span class="fa fa-check text-success" ></span> See all events in your area</li>
+                          <li style="color:black;"><span class="fa fa-check text-success"></span> Check who is attending</li>
+                          <li style="color:black;"><span class="fa fa-check text-success"></span> Create your own event</li>
+                          <li style="color:black;"><span class="fa fa-check text-success"></span> Reunite with colleagues</li>
                       </ul>
                     </br>
                   </br>
-                      <p><a href="/users/sign_up/" class="btn btn-info btn-block">Yes please, I want to Sign Up</a></p>
+                      <p><a href="/users/sign_up/" class="btn btn-primary" style="width:66%; margin-left:28%; margin-right:22%; letter-spacing: 1px;">Yes please, I want to Sign Up</a></p>
                   </div>
               </div>
           </div>

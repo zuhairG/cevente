@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get "users/sign_in", :to => "devise/sessions#new"
   get "users/sign_out", :to => "devise/sessions#destroy"
   get "users/sign_up", :to => "devise/registrations#new"
-  get "/welcome/:studentindex" => "studentindex#show"
 
 end
 resources :events do
@@ -30,6 +29,7 @@ end
    get "/about" , :to => "welcome#about"
    get "/faq" , :to => "welcome#faq"
    get"/home", :to =>"welcome#studentindex"
+   get"/welcome/studentindex", :to =>"welcome#studentindex"
    get "/contact" , :to => "welcome#contact"
 
   # Example of regular route:

@@ -1,4 +1,4 @@
-<div style="width:50%; float:left; ">
+<div class="container">
 
 <%= form_for @event, :html => { :class => "form-horizontal event", :multipart => true } do |f| %>
 
@@ -17,87 +17,73 @@
     </div>
   <% end %>
 
+<table style="width:50%; float:left; margin-bottom:6%;">
+<tr>
 
-  <div class="control-group">
-    <%= f.label :title, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :title, :class => 'form-control' %>
-    </div>
-  </div>
-
-  <div class="control-group">
-    <%= f.label :location_id, :class => 'control-label'  %>
-    <div class="controls">
-      <%= collection_select(:event, :location_id, Location.by_user(current_user), :id, :title)%>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :desc,'Description', :class => 'control-label' %>
-    <div class="controls">
- <%= f.text_field :desc, :class => 'form-control' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :start_date, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.date_field :start_date, :class => 'form-control' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :end_date, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.date_field :end_date, :class => 'form-control' %>
-    </div>
-  </div>
-
-  <div class="control-group">
-    <%= f.label :free_food, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :free_food, :class => 'form-control' %>
-    </div>
-  </div>
-
-</div>
+<td>  <br>     <%= f.label :title %> </td>
+<td>   <br>      <%= f.text_field :title%> </td>
+</tr>
+<tr>
+<td>
+   <br>    <%= f.label :location_id  %></td>
+<td>    <br>     <%= collection_select(:event, :location_id, Location.by_user(current_user), :id, :title)%> </td>
+</tr>
 
 
-  <div class="control-group">
-    <%= f.label :status, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :status, :class => 'form-control' %>
-    </div>
-  </div>
+<tr>
+<td>   <br>    <%= f.label :start_date %> </td>
+<td>   <br>      <%= f.date_field :start_date %> </td>
+</tr>
+<tr>
+<td>   <br>    <%= f.label :end_date %> </td>
+<td>  <br>       <%= f.date_field :end_date %> </td>
+</tr>
 
+<tr>
+  <td>  <br>   <%= f.label :desc %></td>
+<td>  <br> <div style="max-width:20px;">  <%= f.text_area :desc %></div></td>
+</tr>
 
+</table>
 
-  <div class="control-group">
-    <%= f.label :event_type_id, :class => 'control-label' %>
-    <div class="controls">
-      <!-- <%= f.select :event_type_id, :class => 'form-control' %> -->
-      <%= f.select(:event_type_id, ['Public', 'Private'], {}, { :class => 'form-control' }) %>
-    </div>
-  </div>
+<table style="width:50%; float:right; margin-bottom:6%;">
+<tr>
+<td>   <br>    <%= f.label :status %></td>
+<td>  <br>       <%= f.text_field :status  %></td>
+</tr>
 
-  <div class="control-group">
-    <%= f.label :rsvp_max,'Maximum number of RSVPs', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :rsvp_max, :class => 'form-control' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :image, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.file_field :image, :class => 'form-control' %>
-    </div>
-  </div>
-<div style="margin-left:43%;">
+<tr>
+
+<td>   <br>    <%= f.label :free_food %> </td>
+<td>    <br>     <%= f.check_box :free_food %> </td>
+</tr>
+
+<tr>
+<td>   <br>    <%= f.label :event_type_id %></td>
+<td>   <br>      <%= f.select(:event_type_id, ['Public', 'Private'], {}) %></td>
+</tr>
+
+<tr>
+<td>   <br>    <%= f.label :rsvp_max , 'Maximum Number of RSVPs'%> </td>
+<td>   <br>      <%= f.select :rsvp_max, options_for_select(0..500) %> </td>
+</tr>
+<tr>
+
+<td>   <br>    <%= f.label :image %> </td>
+<td>   <br>   <%= f.file_field :image %> </td>
+</tr>
+</table>
+
+<br>
+<br>
+
+<div style="margin-left:60%; margin-bottom:6%; ">
 </br>
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
             events_path, :class => 'btn btn-default' %>
-          </br>
-        </br>
 
-          </br>
           </div>
 
 <% end %>
+</div>
