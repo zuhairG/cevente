@@ -1,18 +1,18 @@
 <div class="navbar navbar-fixed-top">
 
 
-<nav class="navbar navbar-inverse" style="background-color: #292c2f;">
+<nav class="navbar navbar-inverse" style="background-color: #292c2f; border-radius: 0;">
   <div class="container-fluid">
     <div class="navbar-header">
 
-   <%= link_to "Cevente", root_path, :class => 'navbar-brand', :style =>'margin-left:18%;' %>
+   <%= link_to "Cevente", root_path, :class => 'navbar-brand', :style =>'margin-left:18%; color:white; letter-spacing: 1.5px;' %>
 </div>
 
       <% if user_signed_in? %>
 
       <ul class="nav pull-right" style="margin-right:8%;">
                   <li class="dropdown">
-                      <a data-toggle="dropdown" class="dropdown-toggle" style="margin-top:10%; "> <span class="glyphicon glyphicon-align-justify"></span> </a>
+                      <a data-toggle="dropdown" class="dropdown-toggle" style="margin-top:10%; color:white; "> <span class="glyphicon glyphicon-align-justify"></span> </a>
                         <ul class="dropdown-menu">
                           <li>
                             <%= link_to "Home",home_path %>
