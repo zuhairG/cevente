@@ -13,10 +13,10 @@ class Event < ActiveRecord::Base
   belongs_to :user
   has_one :type
 
-  before_validation(on: :create) do
-    errors.add(:start_date, "must be before end time") unless
-        (self.start_date < self.end_date)
-        print 'hereeeee'
-  end
-
+  after_validation(on: :create) do
+      errors.add(:start_date, "must be before End date") unless
+      if !self.start_date.nil? && !self.end_date.nil?
+        (self.start_date <= self.end_date)
+      end
+end
 end
