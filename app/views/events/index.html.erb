@@ -23,7 +23,6 @@
     <!-- Page Heading -->
     <div class="row">
       <h1 class="page-header">My Events
-        <small></small>
       </h1>
     </div>
     <% if current_user && Event.find_by_user_id(current_user.id).nil? %>
