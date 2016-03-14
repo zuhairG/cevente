@@ -19,14 +19,14 @@
         <!-- Portfolio Item Row -->
 <table style="margin-bottom:4%;" >
     <tr>
-      <td>
+      <td style="width:30%;">
                 <img class="img-responsive">   <%=image_tag @event.image.url%> </img>
       </td>
 
       <td>
-        <div style="margin-left:50%; width:120%">
+        <div style="margin-left:20%; width:50%">
                 <h3>Project Description</h3>
-                <p><%= @event.desc %></p>
+                <p style="word-break:break-all;"><%= @event.desc %></p>
                 <h3>Project Details</h3>
                 <ul>
   <% if @event.title != nil %>
@@ -89,7 +89,7 @@
 </td>
 </tr>        <!-- /.row -->
 <tr>
-<td>
+<td style=":width:30%;">
   <br>
   <br>
   <br>
@@ -100,8 +100,8 @@
 <%= hidden_field_tag :search, params[:search], :id => 'search_box_geocoding', value: @location_for_map %>
   </div>
 </td>
-<td>
-  <div style="margin-left:50%; width:120%">
+<td style="width:70%;">
+  <div style="margin-left:20%; width:50%">
 
 
 <table>
