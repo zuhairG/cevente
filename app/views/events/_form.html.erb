@@ -26,7 +26,9 @@
 <tr>
 <td>
    <br>    <%= f.label :location_id  %></td>
-<td>    <br>     <%= collection_select(:event, :location_id, Location.by_user(current_user), :id, :title)%> </td>
+<td>    <br>     <%= collection_select(:event, :location_id, Location.by_user(current_user), :id, :title)%>
+ &nbsp <div class="glyphicon glyphicon-plus"></div><%= link_to "Add New" , "/locations/new" %>
+</td>
 </tr>
 
 
