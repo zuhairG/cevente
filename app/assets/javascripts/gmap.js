@@ -1,3 +1,8 @@
+
+$(window).bind('page:change', function() {
+  loadScript();
+})
+
 $(window).load(function() {
   loadScript();
 });
@@ -7,7 +12,7 @@ var map;
 function initialize() {
 
   var mapOptions = {
-          center: new google.maps.LatLng( 43.4000,24.7000 ),
+          center: new google.maps.LatLng( 43.4000,-24.7000 ),
           zoom: 15,
           mapTypeId: google.maps.MapTypeId.NORMAL,
           panControl: true,
