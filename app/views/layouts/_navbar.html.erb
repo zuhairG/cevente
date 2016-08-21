@@ -1,9 +1,10 @@
 <html>
 <header>
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  <%=stylesheet_link_tag "application","bootstrap","font-awesome-min"%>
 
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" style="margin-top:0px; margin-bottom:10px;">
 
+  <!-- <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script> -->
 
 <nav class="navbar navbar-inverse" style="background-color: #292c2f; border-radius: 0;">
   <div class="container-fluid">
@@ -16,7 +17,7 @@
 
       <ul class="nav pull-right" style="margin-right:8%;">
                   <li class="dropdown">
-                      <a data-toggle="dropdown" class="dropdown-toggle" style="margin-top:10%; color:white; "> <span class="glyphicon glyphicon-align-justify"></span> </a>
+                      <a data-toggle="dropdown" class="dropdown-toggle" style="margin-top:12%; color:white; "> <span class="glyphicon glyphicon-align-justify"></span> </a>
                         <ul class="dropdown-menu">
                           <li>
                             <%= link_to "Home",home_path %>
