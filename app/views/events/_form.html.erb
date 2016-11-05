@@ -23,14 +23,15 @@
 <td>  <br>     <%= f.label :title %> </td>
 <td>   <br>      <%= f.text_field :title%> </td>
 </tr>
+<!--
 <tr>
 <td>
    <br>    <%= f.label :location_id  %></td>
 <td>    <br>     <%= collection_select(:event, :location_id, Location.by_user(current_user), :id, :title)%>
- <!-- &nbsp <div class="glyphicon glyphicon-plus"></div><button id="popbox" onclick="div_show()"><%= link_to "Add New", class: 'open'%> </button> -->
+  &nbsp <div class="glyphicon glyphicon-plus"></div><button id="popbox" onclick="div_show()"><%= link_to "Add New", class: 'open'%> </button>
 </td>
 </tr>
-
+-->
 
 <tr>
 <td>   <br>    <%= f.label :start_date %> </td>
@@ -39,6 +40,33 @@
 <tr>
 <td>   <br>    <%= f.label :end_date %> </td>
 <td>  <br>       <%= f.datetime_select :end_date %> </td>
+</tr>
+
+<tr>
+<td>   <br>    <%= f.label :address1, "Address Line 1" %> </td>
+<td>   <br>      <%= f.text_field :address1 %> </td>
+</tr>
+
+
+<tr>
+<td>   <br>    <%= f.label :address2, "Address Line 2" %> </td>
+<td>   <br>      <%= f.text_field :address2 %> </td>
+</tr>
+
+<tr>
+<td>   <br>    <%= f.label :city, "City" %> </td>
+<td>   <br>      <%= f.text_field :city %> </td>
+</tr>
+
+<tr>
+<td>   <br>    <%= f.label :state, "State" %> </td>
+<td>   <br>      <%= f.text_field :state %> </td>
+</tr>
+
+
+<tr>
+<td>   <br>    <%= f.label :country, "Country" %> </td>
+<td>   <br>      <%= f.country_select :country %> </td>
 </tr>
 
 <tr>
