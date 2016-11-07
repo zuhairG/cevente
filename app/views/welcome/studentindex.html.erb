@@ -65,7 +65,7 @@
           <td  style="width:70%;">
             <div style="margin-left: 11%; margin-right:11%;">
            <h3><%= event.title%></h3>
-            <h4 style="width:100%;"><%= Location.find(event.location_id).city %>, <%= Location.find(event.location_id).country %></h4>
+            <h4 style="width:100%;"><%= event.city %>, <%= event.country %></h4>
                <%= truncate(event.desc, length:80) %>
                 <%= link_to 'View Event',  event_path(event), class:"btn btn-primary",style:"margin-right:40%; margin-top:5%;" %>
 

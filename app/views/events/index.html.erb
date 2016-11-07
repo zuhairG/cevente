@@ -63,7 +63,7 @@
 <td  style="width:70%;">
     <div style="margin-left:20%; width:60%;">
     <h3><%= link_to event.title, event_path(event)  %></h3>
-    <h4><%= Location.find(event.location_id).city %>, <%= Location.find(event.location_id).country %></h4>
+    <h4><%= event.city %>, <%= event.country %></h4>
   <%= truncate(event.desc,length:80) %><br/>
     start date: <%= event.start_date.to_date.strftime("%m/%d/%Y") %>
 

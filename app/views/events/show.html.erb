@@ -32,8 +32,8 @@
   <% if @event.title != nil %>
                     <li>  <strong><%= model_class.human_attribute_name(:title) %>:</strong> &nbsp;&nbsp;<%= @event.title %></li>
 <%end%>
-  <% if @event.location_id != nil %>
-                      <li><strong><%= model_class.human_attribute_name(:location_id) %>:</strong>&nbsp;&nbsp;<%= @location_for_map %></li>
+  <% if @event.address1 != nil %>
+                      <li><strong>Location:</strong>&nbsp;&nbsp;<%= @location_for_map %></li>
 <%end%>
   <% if @event.start_date != nil %>
                       <li><dt><strong><%= model_class.human_attribute_name(:start_date) %>;</strong> &nbsp;&nbsp;
