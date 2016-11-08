@@ -118,6 +118,8 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
+
       params.require(:event).permit(:title, :location_id, :desc, :start_date, :end_date, :free_food, :status, :event_type_id, :num_views, :rsvp_max, :image,:address1,:address2,:city,:state,:zip,:country)
+
     end
 end

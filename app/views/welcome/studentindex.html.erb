@@ -20,8 +20,8 @@
   <!-- Page Heading -->
   <div class="container">
   <div class="row" >
-          <h1 class="page-header">Page Heading
-              <small>Secondary Text</small>
+          <h1 class="page-header"> Cevente
+              <small>List of events in your area</small>
           </h1>
   </div>
 
@@ -67,6 +67,7 @@
            <h3><%= event.title%></h3>
             <h4 style="width:100%;"><%= event.city %>, <%= event.country %></h4>
                <%= truncate(event.desc, length:80) %>
+               <br>
                 <%= link_to 'View Event',  event_path(event), class:"btn btn-primary",style:"margin-right:40%; margin-top:5%;" %>
 
               <br>
