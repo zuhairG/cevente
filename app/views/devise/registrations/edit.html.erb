@@ -154,13 +154,15 @@
 
       <!-- edit form column -->
       <div class="col-md-9 personal-info">
-        <div class="alert alert-info alert-dismissable">
+        <!-- <div class="alert alert-info alert-dismissable">
           <a class="panel-close close" data-dismiss="alert">×</a>
           <i class="fa fa-coffee"></i>
           <%= devise_error_messages! %>
-        </div>
+        </div> -->
         <h3>Personal info</h3>
 
+        <br>
+        <br>
         <form class="form-horizontal" role="form">
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
@@ -168,18 +170,23 @@
               <%= f.text_field :first_name, autofocus: true , class:"form-control", placeholder: resource.first_name%>
             </div>
           </div>
+
+<br>
+<br>
+
+
+
           <div class="form-group">
             <label class="col-lg-3 control-label">Last name:</label>
             <div class="col-lg-8">
               <%= f.text_field :last_name, autofocus: true , class:"form-control", placeholder: resource.first_name%>
             </div>
           </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Company:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
-            </div>
-          </div>
+
+          <br>
+          <br>
+
+
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
@@ -187,12 +194,20 @@
 
             </div>
           </div>
+
+          <br>
+          <br>
+
           <div class="form-group">
             <label class="col-lg-3 control-label">City:</label>
             <div class="col-lg-8">
               <%= f.text_field :city, autofocus: true,class:"form-control",  placeholder: resource.city%> </td>
             </div>
           </div>
+
+          <br>
+          <br>
+
           <div class="form-group">
             <label class="col-lg-3 control-label">State:</label>
             <div class="col-lg-8">
@@ -200,6 +215,9 @@
 
             </div>
           </div>
+
+          <br>
+          <br>
 
           <div class="form-group">
             <label class="col-lg-3 control-label">Country:</label>
@@ -209,31 +227,45 @@
             </div>
           </div>
 
+          <br>
+          <br>
+
 
           <div class="form-group">
-            <label class="col-md-3 control-label"><%= f.label :current_password %> <i>(needed to confirm your changes)</i></label>
-            <div class="col-md-8">
-              <%= f.password_field :current_password, autocomplete: "off", class:"form-control" %>
+            <label class="col-lg-3 control-label"><%= f.label :current_password %> <i>(needed to confirm your changes)</i></label>
+            <div class="col-lg-8">
+              <%= f.password_field :current_password,  autofocus: true,  autocomplete: "off", class:"form-control" %>
 
             </div>
+
           </div>
+
+          <br>
+          <br>
+
           <div class="form-group">
-            <label class="col-md-3 control-label"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i></label>
-            <div class="col-md-8">
+            <label class="col-lg-3 control-label"><%= f.label :password %> <i>(leave blank if you don't want to change)</i></label>
+            <div class="col-lg-8">
               <%= f.password_field :password, autocomplete: "off", class:"form-control" %>
             </div>
           </div>
 
+          <br>
+          <br>
+
           <div class="form-group">
-            <label class="col-md-3 control-label"><%= f.label :password_confirmation %> <i>(leave blank if you don't want to change it)</i></label>
-            <div class="col-md-8">
+            <label class="col-lg-3 control-label"><%= f.label :password_confirmation %> <i>(leave blank if you don't want to change)</i></label>
+            <div class="col-lg-8">
               <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %>
             </div>
           </div>
 
+          <br>
+          <br>
+
           <div class="form-group">
-            <label class="col-md-3 control-label"></label>
-            <div class="col-md-8">
+            <label class="col-lg-3 control-label"></label>
+            <div class="col-lg-8">
               <%= f.submit "Update", class:"btn btn-primary" %>
               <span></span>
 
