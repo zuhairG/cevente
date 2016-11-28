@@ -1558,7 +1558,8 @@ body {
 }
 
 .image-bg-fluid-height,
-.image-bg-fixed-height {
+.image-bg-fixed-height,
+.image-bg-fixed-shortheight{
     text-align: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1567,12 +1568,21 @@ body {
 }
 
 .image-bg-fluid-height {
-	background: url('http://lorempixel.com/1920/940/city') no-repeat center center scroll;
+	background: url('http://loremflickr.com/1920/940/Collegecampus') no-repeat center center scroll;
     padding: 100px 0;
 }
 
 .image-bg-fixed-height {
-	background: url('http://lorempixel.com/1920/940/city') no-repeat center center scroll;
+	background: url('http://loremflickr.com/1920/960/Collegecampus') no-repeat center center scroll;
+  /*background: url('http://lorempixel.com/1920/940/city') no-repeat center center scroll;*/
+
+    height: 350px;
+}
+
+.image-bg-fixed-shortheight {
+	background: url('http://loremflickr.com/1320/650/Collegecampus') no-repeat center center scroll;
+  /*background: url('http://lorempixel.com/1920/940/city') no-repeat center center scroll;*/
+
     height: 350px;
 }
 
