@@ -1567,12 +1567,12 @@ body {
 }
 
 .image-bg-fluid-height {
-	background: url('http://lorempixel.com/1920/700/city') no-repeat center center scroll;
+	background: url('http://lorempixel.com/1920/940/city') no-repeat center center scroll;
     padding: 100px 0;
 }
 
 .image-bg-fixed-height {
-	background: url('http://lorempixel.com/1920/700/city') no-repeat center center scroll;
+	background: url('http://lorempixel.com/1920/940/city') no-repeat center center scroll;
     height: 350px;
 }
 

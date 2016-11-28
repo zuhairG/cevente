@@ -1,4 +1,4 @@
-
+<!--
 
 
 <title>Cevente - Sign Up</title>
@@ -117,4 +117,175 @@
 </div>
 </div>
 </div>
+</div> -->
+
+<title>Cevente - Sign Up</title>
+
+
+
+<body class="image-bg-fixed-height">
+<div class="container">
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html =>{:multipart => true }) do |f| %>
+
+  <%= devise_error_messages! %>
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <br>
+        
+          <br>
+            <div class="panel panel-default" style="width:180%; margin-left:-40%;">
+                <div class="panel-heading"> <strong class="">Sign Up</strong>
+
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">First Name</label>
+                            <div class="col-sm-9">
+                                <%= f.text_field :first_name, class:"form-control", placeholder:"First Name", autocomplete: "off" %>
+                            </div>
+                        </div>
+
+<br>
+<br>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Last Name</label>
+                            <div class="col-sm-9">
+                                <%= f.text_field :last_name, class:"form-control",  placeholder:"Last Name",autocomplete: "off" %>
+                            </div>
+                        </div>
+<br>
+<br>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Date of Birth</label>
+                            <div class="col-sm-9">
+                                <%= f.date_field :dob, class:"form-control", placeholder:"Date of Birth",autocomplete: "off" %>
+
+                            </div>
+                        </div>
+
+  <br>
+  <br>
+
+
+  <div class="form-group">
+    <label  class="col-sm-3 control-label">City</label>
+        <div class="col-sm-9">
+      <%= f.text_field :city, class:"form-control", placeholder:"City" ,autocomplete: "off" %>
+
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label">State</label>
+          <div class="col-sm-9">
+        <%= f.text_field :state, class:"form-control", placeholder:"State",autocomplete: "off" %>
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+
+      <div class="form-group">
+        <label  class="col-sm-3 control-label">Country</label>
+            <div class="col-sm-9">
+          <%= f.country_select :country, :include_blank => 'Select a Country' , class:"form-control",autocomplete: "off" %>
+
+          </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="form-group">
+          <label  class="col-sm-3 control-label">Email</label>
+              <div class="col-sm-9">
+            <%= f.email_field :email, class:"form-control", placeholder:"Email",autocomplete: "off" %>
+            </div>
+          </div>
+
+          <br>
+          <br>
+
+
+          <div class="form-group">
+            <!-- <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %>
+                  <br> -->
+
+            <label class="col-sm-3 control-label">Password</label>
+
+
+                <div class="col-sm-9">
+
+              <%= f.password_field :password, class:"form-control", placeholder:"8 minimum characters",autocomplete: "off" %>
+              </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="form-group">
+              <label  class="col-sm-3 control-label">Password Confirmation</label>
+                  <div class="col-sm-9">
+                <%= f.password_field :password_confirmation, class:"form-control", placeholder:"Password Confirmation",autocomplete: "off" %>
+                </div>
+              </div>
+
+
+              <br>
+              <br>
+
+              <div class="form-group">
+                <label  class="col-sm-3 control-label">Profile Picture</label>
+                    <div class="col-sm-9">
+                  <%= f.file_field :image, class:"form-control", placeholder:"Password Confirmation",autocomplete: "off" %>
+
+                  </div>
+                </div>
+
+                <br>
+                <br>
+
+                <div class="form-group">
+                  <label  class="col-sm-3 control-label">Type</label>
+                      <div class="col-sm-9">
+                    <%= f.select(:type, User::TYPE) %>
+                     <%= f.hidden_field :student, :value => true %>
+
+                    </div>
+                  </div>
+
+
+<br>
+<br>
+<br>
+  <%= f.submit "Sign up", class:"btn btn-success btn-sm" %>
+
+
+
+
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<%end%>
 </div>
+
+</body>
