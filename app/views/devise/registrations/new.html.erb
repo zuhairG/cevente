@@ -220,10 +220,10 @@
 
 
           <div class="form-group">
-            <!-- <% if @minimum_password_length %>
-                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> minimum characters)</em>
                   <% end %>
-                  <br> -->
+                  <br>
 
             <label class="col-sm-3 control-label">Password</label>
 
@@ -263,7 +263,7 @@
                   <label  class="col-sm-3 control-label">Type</label>
                       <div class="col-sm-9">
                     <%= f.select(:type, User::TYPE) %>
-                     <%= f.hidden_field :student, :value => true %>
+                     <!-- <%= f.hidden_field :student, :value => true %> -->
 
                     </div>
                   </div>
